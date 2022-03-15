@@ -73,3 +73,9 @@ body{
 .studentInfo ul {
   list-style: none;
 }
+
+.studentInfo h1{
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: xx-large;
+}
