@@ -1,12 +1,14 @@
 import React, {useContext, useEffect} from 'react'
 import { DataContext } from '../DataContext'
 import Axios from '../Axios'
+import Student from './Student'
 
 const StudentList = () => {
   const [studentData, setStudentData] = useContext(DataContext)
 
-    useEffect(() => {
 
+    useEffect(() => {
+// Fetch the api when the component will mount
       Axios.get("students")
       .then(res => {
         // Here we are setting the data in studentData
@@ -21,12 +23,15 @@ const StudentList = () => {
 
 
   return (
-    <div>
+    <div className='studentList'>
           <ul>
           {studentData.map((student) => (
             <div key={student.id.toString()}>
 
-                <li key={student.id.toString()} > {student.city} </li>
+                <Student key={student} img = {student.pic} firstName = {student.firstName}
+                lastName = {student.lastName} email = {student.email} company = {student.company}
+                skill = {student.skill}  grades = {student.grades}
+                />
 
             </div>
           ))}
