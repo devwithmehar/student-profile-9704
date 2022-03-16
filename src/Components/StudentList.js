@@ -4,7 +4,9 @@ import Axios from '../Axios'
 import Student from './Student'
 
 const StudentList = () => {
-  const [studentData, setStudentData] = useContext(DataContext)
+  const {student, searchName} = useContext(DataContext)
+  const [studentData, setStudentData] = student;
+  const [searchByName, setSearchByName] = searchName;
 
 
     useEffect(() => {
@@ -25,7 +27,18 @@ const StudentList = () => {
   return (
     <div className='studentList'>
           <ul>
-          {studentData.map((student) => (
+          {studentData.filter((data) => {
+            if(searchByName == "")
+            {
+              return data;
+            }
+            else if(data.firstName.toLowerCase().includes(searchByName.toLowerCase()) ||
+            data.lastName.toLowerCase().includes(searchByName.toLowerCase()))
+            {
+              return data;
+            }
+
+          }).map((student) => (
             <div key={student.id.toString()}>
 
                 <Student key={student} img = {student.pic} firstName = {student.firstName}
