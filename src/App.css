@@ -52,10 +52,17 @@ body{
 .studentContent {
   width: 100%;
   height: auto;
-  border-bottom: 1px solid #dedede;
   display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #dedede;
+  border-width: 100%;
 }
 
+.studentArea{
+  width: 100%;
+  height: auto;
+  display: flex;
+}
 
 .pic{
   border: 1px solid #dedede;
@@ -74,12 +81,36 @@ body{
   list-style: none;
 }
 
+.studentData ul{
+  list-style: none;
+  margin-bottom: 20px;
+}
+
 .studentInfo h1{
   text-transform: uppercase;
   font-weight: bolder;
   font-size: xx-large;
 }
 
+.showGrades{
+
+  width: 8%;
+  margin-top: 27px;
+  margin-left: 5px;
+}
+
+.iconStyle{
+  font-size: x-large;
+  font-weight: bolder;
+  color: #808589;
+}
+
+.adjustGrades{
+  margin-top: 20px;
+}
+.gradeSpan{
+  margin-left: 20%;
+}
 /* ************ Style the Search area ********* */
 .searchArea{
   width: 96%;
