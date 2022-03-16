@@ -5,6 +5,7 @@ import StudentGrades from './StudentGrades';
 const Student = ({img, firstName,  lastName , email , company,  skill , grades}) => {
 
   const [isHide, setIsHide] = useState(true);
+ 
 
   let sum = 0;
 
