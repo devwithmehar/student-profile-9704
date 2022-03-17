@@ -125,15 +125,64 @@ body{
   border: none;
   border-bottom: 1px solid #dedede;
 }
-::placeholder {
+.searchArea ::placeholder {
   color: black;
   font-size: large;
   opacity: 1;
 }
 
-input:focus {
+.searchArea input:focus {
 
   outline: 0;
   border-bottom: 2px solid black;
   font-size: large;
+}
+
+/* ************ Style the TagForm Component ********* */
+.tagForm{
+  width: 100%;
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+.tagForm ::placeholder {
+  color: black;
+  font-size: medium;
+  opacity: 1;
+}
+
+.tagForm input:focus {
+
+  outline: 0;
+  border-bottom: 2px solid #808589;
+  font-size: large;
+}
+.tagInput{
+  border: none;
+  border-bottom: 1px solid #dedede;
+}
+
+/* ************ Style the ShowTag Component ********* */
+.showTag{
+  width: 100%;
+  margin-top: -8px;
+  margin-left: 40px;
+  margin-bottom: 15px;
+
+}
+.showTag ul {
+width: 100%;
+display: flex;
+flex-direction: row;
+list-style: none;
+justify-content:left;
+margin-left: -38px;
+}
+.tags{
+  width: fit-content;
+  background-color: #dedede;
+  margin-right: 8px;
+  border-radius: 3px;
+}
+.tags span{
+  margin: 10px;
 }
