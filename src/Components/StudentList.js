@@ -1,13 +1,14 @@
-import React, {useContext, useEffect} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import { DataContext } from '../DataContext'
 import Axios from '../Axios'
 import Student from './Student'
 
 
 const StudentList = () => {
-  const {student, searchName} = useContext(DataContext)
+  const {student, searchName } = useContext(DataContext)
   const [studentData, setStudentData] = student;
   const [searchByName, setSearchByName] = searchName;
+
 
 
     useEffect(() => {
@@ -16,12 +17,17 @@ const StudentList = () => {
       .then(res => {
         // Here we are setting the data in studentData
         setStudentData(res.data.students);
+
+
       })
       .catch(error =>{
         console.log(error);
       })
 
+
+
     }, [])
+
 
 
 
@@ -40,9 +46,9 @@ const StudentList = () => {
             }
 
           }).map((student) => (
-            <div key={student.id.toString()}>
+            <div key={student.id}>
 
-                <Student key={student} img = {student.pic} firstName = {student.firstName}
+                <Student key={student} id={student.id} img = {student.pic} firstName = {student.firstName}
                 lastName = {student.lastName} email = {student.email} company = {student.company}
                 skill = {student.skill}  grades = {student.grades}
                 />

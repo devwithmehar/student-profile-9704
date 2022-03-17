@@ -1,11 +1,21 @@
-import React, {useState} from 'react'
+import React, {useState, useContext, useEffect} from 'react'
 import {ImPlus , ImMinus } from 'react-icons/im'
 import StudentGrades from './StudentGrades';
+import TagForm from './TagForm';
+import ShowTags from './ShowTags';
+import { DataContext } from '../DataContext';
 
-const Student = ({img, firstName,  lastName , email , company,  skill , grades}) => {
+const Student = ({id,img, firstName,  lastName , email , company,  skill , grades }) => {
 
   const [isHide, setIsHide] = useState(true);
- 
+  const [tag, setTag] = useState([]);
+  const {student} = useContext(DataContext)
+  const [studentData, setStudentData] = student;
+
+
+
+
+
 
   let sum = 0;
 
@@ -41,6 +51,11 @@ const Student = ({img, firstName,  lastName , email , company,  skill , grades})
                 {/* Here we import the component depend on the condition */}
                 {isHide ? "" : <StudentGrades grades={grades} />}
 
+
+
+                {tag.length !=0 ? <ShowTags tag={tag} studentId={id} /> : ""}
+
+                <TagForm tag={tag} setTag={setTag}   studentId={id}  />
           </div>
       </div>
 
