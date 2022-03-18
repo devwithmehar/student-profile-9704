@@ -1,6 +1,7 @@
 import React from 'react'
 import StudentList from './StudentList'
 import SearchByName from './SearchByName'
+import SearchByTag from './SearchByTag'
 
 
 const MainContent = () => {
@@ -8,6 +9,9 @@ const MainContent = () => {
     <div className='mainContent'>
 
     <SearchByName />
+    
+    <SearchByTag />
+
 
     <div className='scrollArea'>
        <StudentList />
