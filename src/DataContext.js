@@ -6,13 +6,13 @@ export const DataProvider = props =>{
 
   const [studentData, setStudentData] = useState([]);
   const [searchByName, setSearchByName] = useState("");
-  const [tag, setTag] = useState([]);
+  const [searchByTag, setsearchByTag] = useState("");
 
 
   return(
     <DataContext.Provider value={{student: [studentData, setStudentData],
                                   searchName: [searchByName, setSearchByName],
-                                  tags: [tag, setTag] }} >
+                                  searchTags: [searchByTag, setsearchByTag] }} >
 
        {props.children}
 

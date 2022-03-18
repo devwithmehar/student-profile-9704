@@ -5,9 +5,10 @@ import Student from './Student'
 
 
 const StudentList = () => {
-  const {student, searchName } = useContext(DataContext)
+  const {student, searchName , searchTags } = useContext(DataContext)
   const [studentData, setStudentData] = student;
   const [searchByName, setSearchByName] = searchName;
+  const [searchByTag, setsearchByTag] = searchTags;
 
 
 
@@ -31,6 +32,8 @@ const StudentList = () => {
 
 
 
+
+
   return (
     <div className='studentList'>
           <ul>
@@ -44,6 +47,33 @@ const StudentList = () => {
             {
               return data;
             }
+
+          }).filter((value) =>{
+            if(searchByTag == "")
+            {
+              return value;
+            }
+            else if(value.hasOwnProperty('tags'))
+            {
+              let matchTag = "";
+
+              value.tags.map((tagValue) =>{
+                tagValue.map((finalTag) =>{
+
+
+                  if(finalTag.tagName.toLowerCase().includes(searchByTag.toLowerCase()))
+                  {
+                    console.log(matchTag);
+                    matchTag = finalTag.tagName;
+
+                  }
+
+                })
+
+              })
+              return matchTag;
+            }
+
 
           }).map((student) => (
             <div key={student.id}>
